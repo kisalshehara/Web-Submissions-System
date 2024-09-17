@@ -18,7 +18,7 @@ app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 app.config['MAIL_USERNAME'] = 'kisalshehara7@gmail.com'  # Your Gmail address
-app.config['MAIL_PASSWORD'] = 'cdnj tdjd koas faba'  # App-specific password or your actual password (if using less secure apps)
+app.config['MAIL_PASSWORD'] = '#'  # App-specific password or your actual password (if using less secure apps)
 app.config['MAIL_DEFAULT_SENDER'] = 'kisalshehara7@gmail.com'  # Default sender email
 
 mail = Mail(app)
