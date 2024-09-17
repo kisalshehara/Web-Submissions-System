@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3Forms Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.5);
+            color: #333;
+            box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="email"]:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1rem;
+            color: #fff;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .flash-message {
+            font-size: 1rem;
+            color: #fff;
+            background-color: rgba(255, 99, 132, 0.8);
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .flash-message.success {
+            background-color: rgba(54, 162, 235, 0.8);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Get Your Access Key</h1>
+
+        <form action="/" method="POST">
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Get Access Key</button>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-message {{ category }}">
+              <ul>
+              {% for category, message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endwith %}
+    </div>
+
+</body>
+</html>

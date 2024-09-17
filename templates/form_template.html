@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Form Code</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        pre {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            overflow: auto;
+            font-size: 1.1rem;
+        }
+
+        pre code {
+            color: #fff;
+        }
+
+        .form-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Your Custom Form Code</h1>
+        <p>Copy and paste this code on your website:</p>
+
+        <pre><code>{{ form_html | safe }}</code></pre>
+
+        <button class="button">Copy Code</button>
+    </div>
+
+</body>
+</html>
